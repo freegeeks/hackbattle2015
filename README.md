@@ -6,7 +6,7 @@
 
 - [ ] Store products on LocalStorage
 - [ ] Search products by proximity
-- [ ] Retrieve geolocation from Browser ([see](http://dev.w3.org/geo/api/spec-source.html))
+- [x] Retrieve geolocation from Browser ([see](http://dev.w3.org/geo/api/spec-source.html)) - Renan
 - [x] Calculate distance between coordinates - Renan
 - [ ] Upload product picture to Dropbox
 - [ ] Verify seller mobile number
