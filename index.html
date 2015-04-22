@@ -15,14 +15,18 @@
         If you can see this, React is not working right.
         If you checked out the source from GitHub make sure to run <code>grunt</code>.
       </p>
+
+   
     </div>
+     <div id="map-canvas"></div>
+    
     
     <script src="shared/thirdparty/es5-shim.min.js"></script>
     <script src="shared/thirdparty/es5-sham.min.js"></script>
     <script src="shared/thirdparty/console-polyfill.js"></script>
-    <script src="src/utils.js"></script>
     <script src="build/react-with-addons.js"></script>
     <script src="src/geodata.js"></script>
+
     <script type="text/jsx">
       var GeoDistance = React.createClass({
         mixins: [React.addons.LinkedStateMixin],
@@ -76,5 +80,7 @@
       );
     </script>
     <script src="build/JSXTransformer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="src/utils.js"></script>
   </body>
 </html>
