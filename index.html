@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="shared/css/base.css" />
   </head>
   <body>
-    <h1>Basic Example</h1>
     <div id="container">
       <p>
         To install React, follow the instructions on
@@ -17,34 +16,64 @@
         If you checked out the source from GitHub make sure to run <code>grunt</code>.
       </p>
     </div>
-    <h4>Example Details</h4>
-    <p>This is written in vanilla JavaScript (without JSX) and transformed in the browser.<p>
-    <p>
-      Learn more about React at
-      <a href="http://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
-    </p>
+    
     <script src="shared/thirdparty/es5-shim.min.js"></script>
     <script src="shared/thirdparty/es5-sham.min.js"></script>
     <script src="shared/thirdparty/console-polyfill.js"></script>
     <script src="build/react.js"></script>
+    <script src="src/geodata.js"></script>
     <script type="text/jsx">
-      var ExampleApplication = React.createClass({
+      var GeoDistance = React.createClass({
+        getInitialState: function() {
+          return {
+            distance: null
+          };
+        },
+        handleSubmit: function(e) {
+          e.preventDefault();
+          console.log(this.refs);
+          this.setState({
+            distance: this.calculateDistance(
+              {
+                latitude: parseFloat(React.findDOMNode(this.refs['point1.latitude']).value, 10),
+                longitude: parseFloat(React.findDOMNode(this.refs['point1.longitude']).value, 10)
+              },
+              {
+                latitude: parseFloat(React.findDOMNode(this.refs['point2.latitude']).value, 10),
+                longitude: parseFloat(React.findDOMNode(this.refs['point2.longitude']).value, 10)
+              }
+            )
+          });
+        },
+        calculateDistance: function(point1, point2) {
+          console.log(point1, point2);
+          var geodata = new Geodata(point1);
+          return geodata.distance(point2);
+        },
         render: function() {
-          var elapsed = Math.round(this.props.elapsed  / 100);
-          var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
-          var message =
-            'React has been successfully running for ' + seconds + ' seconds.';
-
-          return <p>{message}</p>;
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                Point 1:
+                <input type="text" ref="point1.latitude" value="52.3532884" />
+                <input type="text" ref="point1.longitude" value="4.8407814" />
+              </div>
+              <div>
+                Point 2:
+                <input type="text" ref="point2.latitude" value="52.3865138" />
+                <input type="text" ref="point2.longitude" value="4.8697248" />
+              </div>
+              <button>Calculate</button>
+              <div>Distance: {this.state.distance}</div>
+            </form>
+          );
         }
       });
-      var start = new Date().getTime();
-      setInterval(function() {
-        React.render(
-          <ExampleApplication elapsed={new Date().getTime() - start} />,
-          document.getElementById('container')
-        );
-      }, 50);
+
+      React.render(
+        <GeoDistance />,
+        document.getElementById('container')
+      );
     </script>
     <script src="build/JSXTransformer.js"></script>
   </body>
