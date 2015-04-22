@@ -14,6 +14,16 @@
 - [ ] Slice HTML
 - [ ] Integrate sliced HTML into templates
 
+## WebServer
+
+To take advantages of some browser capabilities, like geolocation, we need to run the app in a webserver. Simple static webserver will do. In the absence, just do:
+
+```shell
+python -m SimpleHTTPServer 3000
+```
+
+And open [localhost:3000](http://localhost:3000).
+
 ## Contributors
 
 - [Fahad Ibnay Heylaal](https://github.com/fahad19)
