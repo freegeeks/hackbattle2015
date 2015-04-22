@@ -8,6 +8,9 @@
 - [ ] Search products by proximity
 - [ ] Retrieve geolocation from Browser ([see](http://dev.w3.org/geo/api/spec-source.html))
 - [x] Calculate distance between coordinates - Renan
+- [ ] Upload product picture to Dropbox
+- [ ] Verify seller mobile number
+- [ ] Send SMS to seller
 - [ ] Slice HTML
 - [ ] Integrate sliced HTML into templates
 
