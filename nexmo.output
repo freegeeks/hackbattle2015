@@ -1,0 +1,16 @@
+wget -q -O output.verify  "https://api.nexmo.com/verify/json?api_key=ee6e9bfd&api_secret=a7180c65&number=31651429153&brand=NexmoVerifyTest"
+{"request_id":"d73b529c021e490fb378ea8269baba4c","status":"0"}
+
+wget -q -O output.check  "https://api.nexmo.com/verify/check/json?api_key=ee6e9bfd&api_secret=a7180c65&request_id=d73b529c021e490fb378ea8269baba4c&code=2232"
+{"request_id":"d73b529c021e490fb378ea8269baba4c","status":"0","event_id":"030000007421C85C","price":"0.10000000","currency":"EUR"}
+
+wget -q -O output.search  "https://api.nexmo.com/verify/search/json?api_key=ee6e9bfd&api_secret=a7180c65&request_id=d73b529c021e490fb378ea8269baba4c"
+{"request_id":"d73b529c021e490fb378ea8269baba4c","account_id":"ee6e9bfd","number":"31651429153","sender_id":"verify","date_submitted":"2015-04-22 17:31:26","date_finalized":"2015-04-22 17:32:11","checks":[{"date_received":"2015-04-22 17:32:11","code":"2232","status":"VALID","ip_address":""}],"first_event_date":"2015-04-22 17:31:26","last_event_date":"2015-04-22 17:31:26","price":"0.10000000","currency":"EUR","status":"SUCCESS"}
+
+{"request_id":"0235b38c8fd94e968c96ab6a6ba202e6","account_id":"ee6e9bfd","number":"31651429153","sender_id":"verify","date_submitted":"2015-04-22 17:26:14","date_finalized":"2015-04-22 17:28:51","checks":[],"first_event_date":"2015-04-22 17:26:14","last_event_date":"2015-04-22 17:28:21","price":"0","currency":"EUR","status":"FAILED"}
+
+wget -O output.sms "https://rest.nexmo.com/sms/json?api_key=ee6e9bfd&api_secret=a7180c65&from=TripleRs&to=31651429153&text=Uhu+Cornera+Louca"
+{"message-count":"1","messages":[{"to":"31651429153","message-id":"020000005D6D9503","status":"0","remaining-balance":"1.85100000","message-price":"0.04900000","network":"20408"}]}
+
+wget -O output.tts "https://api.nexmo.com/tts/json?api_key=ee6e9bfd&api_secret=a7180c65&from=TripleRs&to=31651429153&text=Hey+Cornera+Louca+safado.&lg=pt-br&voice=male&repeat=10"
+{"call_id":"0505e11fc7b27f286c927cb5bafe2ff2","to":"31651429153","status":"0","error_text":"Success"}
