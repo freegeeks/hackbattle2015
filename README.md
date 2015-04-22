@@ -7,6 +7,7 @@
 - [ ] Store products on LocalStorage
 - [ ] Search products by proximity
 - [ ] Retrieve geolocation from Browser ([see](http://dev.w3.org/geo/api/spec-source.html))
+- [x] Calculate distance between coordinates - Renan
 - [ ] Slice HTML
 - [ ] Integrate sliced HTML into templates
 
