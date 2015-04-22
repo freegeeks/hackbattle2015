@@ -1,0 +1,8 @@
+[
+    {id: 1, name: "test1", price: 150.00, sold: false},
+    {id: 2, name: "test2", price: 150.00, sold: false},
+    {id: 3, name: "test3", price: 150.00, sold: false},
+    {id: 4, name: "test4", price: 150.00, sold: false},
+    {id: 5, name: "test5", price: 150.00, sold: false},
+    {id: 6, name: "test6", price: 150.00, sold: false}
+]
