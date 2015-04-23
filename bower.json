@@ -11,6 +11,7 @@
     "tests"
   ],
   "dependencies": {
-    "reactfire": "0.x.x"
+    "reactfire": "0.x.x",
+    "underscore": "1.8.3"
   }
 }

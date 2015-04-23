@@ -15,13 +15,16 @@ var ProductList = React.createClass({
 	},
 
 	calculateDistance: function(coordinates) {
+		var geodata = new Geodata(coordinates);
+		return geodata.distance(this.props.byDistance);
+	},
+
+	displayDistance: function(coordinates) {
 		if (typeof this.props.byDistance === 'undefined') {
 			return;
 		}
 
-		var geodata = new Geodata(coordinates);
-		var distance = geodata.distance(this.props.byDistance);
-
+		var distance = this.calculateDistance(coordinates);
 		return this.convertDistance(distance);
 	},
 
@@ -40,15 +43,24 @@ var ProductList = React.createClass({
 				<img className="image" src={item.image} />
 				<div className="title">{item.name}</div>
 				<div className="price">{item.price}</div>
-				<div className="distance">{this.calculateDistance(item.geodata)}</div>
+				<div className="distance">{this.displayDistance(item.geodata)}</div>
 				<div className="buy">buy</div>
 			</li>
 		);
 	},
 
+	displayList: function(products) {
+		var items = _.sortBy(products, function(item) {
+			var distance = this.calculateDistance(item.geodata);
+			return distance;
+		}.bind(this));
+
+		return items.map(this.displayItem);
+	},
+
 	render: function() {
 		return (
-			<ul>{ this.state.products.map(this.displayItem) }</ul>
+			<ul>{this.displayList(this.state.products)}</ul>
 		);
 	}
 });
