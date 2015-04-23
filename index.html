@@ -17,7 +17,7 @@
 		</span>  		
 	</header>
 
-	<div id="container">
+	<section id="container">
 		<p>
 			To install React, follow the instructions on
 			<a href="http://www.github.com/facebook/react/">GitHub</a>.
@@ -26,63 +26,11 @@
 			If you can see this, React is not working right.
 			If you checked out the source from GitHub make sure to run <code>grunt</code>.
 		</p>
-	</div>
-
-
-	<section class="maps">
-		<div class="location_options">
-			<span class="current_location">Dam Square, Amsterdam</span>
-			<span class="my_location">My location</span>
-		</div>
-		<div id="map-canvas"></div>
 	</section>
 
-	<section class="search">
-		<input type="text" placeholder="SEARCH for products">
-	</section>
 
-	<section class="product_list">
-		<ul>
-			<li class="product">
-				<img src="https://s-media-cache-ak0.pinimg.com/236x/e7/3c/9d/e73c9d4a8e7ec3ea780afa1f10ecb6e0.jpg" class="image">
-				<div class="title">Super Yellow Bike</div>
-				<div class="price">price € 44,90</div>
-				<div class="distance">2km</div>
-				<div class="buy">buy</div>
-			</li>
-			<li class="product">
-				<img src="https://s-media-cache-ak0.pinimg.com/236x/e7/3c/9d/e73c9d4a8e7ec3ea780afa1f10ecb6e0.jpg" class="image">
-				<div class="title">Super Yellow Bike</div>
-				<div class="price">price € 44,90</div>
-				<div class="distance">2km</div>
-				<div class="buy">buy</div>
-			</li>
-			<li class="product">
-				<img src="https://s-media-cache-ak0.pinimg.com/236x/e7/3c/9d/e73c9d4a8e7ec3ea780afa1f10ecb6e0.jpg" class="image">
-				<div class="title">Super Yellow Bike</div>
-				<div class="price">price € 44,90</div>
-				<div class="distance">2km</div>
-				<div class="buy">buy</div>
-			</li>
-			<li class="product">
-				<img src="https://s-media-cache-ak0.pinimg.com/236x/e7/3c/9d/e73c9d4a8e7ec3ea780afa1f10ecb6e0.jpg" class="image">
-				<div class="title">Super Yellow Bike</div>
-				<div class="price">price € 44,90</div>
-				<div class="distance">2km</div>
-				<div class="buy">buy</div>
-			</li>									
-		</ul>
-		
-	</section>
 
-	<section class="modal_">
-		<span class="close_product orange">x</span>
-		<form class="send_product">
-			<label><input type="text" placeholder="Name"></label>
-			<label><input type="text" placeholder="Price"></label>
-			<label><input type="file" id="files" name="files[]" multiple></label>
-			<input type="button" value="Send" label="sell" class="btn_send orange">Save</button>
-		</form>
+	<section id="modal">
 	</section>
     
     
@@ -99,11 +47,18 @@
     <script type="text/jsx" src="src/geodistance.jsx.js"></script>
     <script type="text/jsx" src="src/productSearch.jsx.js"></script>
     <script type="text/jsx" src="src/productList.jsx.js"></script>
+    
+    <script type="text/jsx" src="src/productSend.jsx.js"></script>
+
     <script type="text/jsx">
       React.render(
         <ProductSearch />,
         document.getElementById('container')
       );
+		React.render(
+        <ProductSend />,
+        document.getElementById('modal')
+      );      
     </script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="src/utils.js"></script>
