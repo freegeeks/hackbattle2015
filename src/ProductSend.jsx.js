@@ -10,7 +10,9 @@ var ProductSend = React.createClass({
 			geolocation: new Geodata({
 				latitude: 52.3532884,
 				longitude: 4.8407814
-			})			
+			}),
+
+			'modalClass':"show"
 		};
 	},
 
@@ -21,7 +23,9 @@ var ProductSend = React.createClass({
 
 
 	handleClick: function(event) {
-		alert("oi");
+		this.setState({
+			modalClass: "hide"
+		});
 
 	},
 
@@ -64,7 +68,7 @@ var ProductSend = React.createClass({
 
 	render: function() {
 		return (
-			<div className="modal">
+			<div id="modal_base" className={this.state.modalClass}>
 			<form className="send_product" onSubmit={this.handleSubmit} id="form">
 				<span className="close_product orange" onClick={this.handleClick}>x</span>
 				<label><input type="text" placeholder="Name" valueLink={this.linkState('name')} /></label>

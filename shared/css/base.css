@@ -146,7 +146,32 @@ header {
 
 
 /* Modal */
-.modal {
+.show {
+	display: block)
+
+	transition:         all .25s ease;
+	-webkit-transition: all .25s ease;
+	-moz-transition:    all .25s ease;
+	-o-transition:      all .25s ease;
+
+}
+.hide {
+	display: none;
+
+	transition:         all .25s ease;
+	-webkit-transition: all .25s ease;
+	-moz-transition:    all .25s ease;
+	-o-transition:      all .25s ease;
+
+}
+
+#modal_base {
+
+	transition:         all .25s ease;
+	-webkit-transition: all .25s ease;
+	-moz-transition:    all .25s ease;
+	-o-transition:      all .25s ease;
+
 	padding-top: 30px;
 	z-index: 99;
 	position: fixed;
