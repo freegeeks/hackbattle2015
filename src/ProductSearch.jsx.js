@@ -19,19 +19,19 @@ var ProductSearch = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<section class="maps">
-					<div class="location_options">
-						<span class="current_location">Dam Square, Amsterdam</span>
-						<span class="my_location">My location</span>
+				<section className="maps">
+					<div className="location_options">
+						<span className="current_location">Dam Square, Amsterdam</span>
+						<span className="my_location">My location</span>
 					</div>
 					<div id="map-canvas"></div>
 				</section>
 
-				<section class="search">
+				<section className="search">
 					<input type="text" placeholder="SEARCH for products" />
 				</section>
 
-				<section class="product_list">
+				<section className="product_list">
 					<ProductList byDistance={this.state.geolocation} />
 				</section>
 			</div>

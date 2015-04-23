@@ -14,12 +14,12 @@ var ProductList = React.createClass({
 
 	listItem: function(item, index) {
 		return (
-			<li class="product">
-				<img class="image" src={item.image} />
-				<div class="title">{item.name}</div>
-				<div class="price">{item.price}</div>
-				<div class="distance">2km</div>
-				<div class="buy">buy</div>
+			<li className="product">
+				<img className="image" src={item.image} />
+				<div className="title">{item.name}</div>
+				<div className="price">{item.price}</div>
+				<div className="distance">2km</div>
+				<div className="buy">buy</div>
 			</li>
 		);
 	},
