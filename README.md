@@ -24,6 +24,15 @@ python -m SimpleHTTPServer 3000
 
 And open [localhost:3000](http://localhost:3000).
 
+## Dependencies
+
+To install dependencies such as Bower packages, which are included in the VCS for ease:
+
+```
+npm install -g bower
+bower install
+```
+
 ## Contributors
 
 - [Fahad Ibnay Heylaal](https://github.com/fahad19)
