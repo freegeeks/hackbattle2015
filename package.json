@@ -4,7 +4,8 @@
   "description": "KingKoop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js": "browserify -t reactify ./src2/app.js > build/app.js"
   },
   "author": "BrownSugar",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "es6-promise": "^2.1.0",
     "flux": "^2.0.1",
     "object-assign": "^2.0.0",
-    "react": "^0.13.2"
+    "react": "^0.13.2",
+    "reactify": "^1.1.0"
   }
 }
