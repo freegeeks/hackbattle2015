@@ -93,9 +93,13 @@
 
     <script src="src/geodata.js"></script>
     <script type="text/jsx" src="src/geodistance.jsx.js"></script>
+    <script type="text/jsx" src="src/productList.jsx.js"></script>
     <script type="text/jsx">
       React.render(
-        <GeoDistance />,
+        <div>
+          <GeoDistance />
+          <ProductList />
+        </div>,
         document.getElementById('container')
       );
     </script>
