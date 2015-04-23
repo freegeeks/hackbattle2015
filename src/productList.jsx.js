@@ -43,7 +43,7 @@ var ProductList = React.createClass({
 				<img className="image" src={item.image} />
 				<div className="title">{item.name}</div>
 				<div className="price">{item.price}</div>
-				<div className="distance">{this.displayDistance(item.geodata)}</div>
+				<div className="distance">{this.displayDistance(item.coordinates)}</div>
 				<div className="buy">buy</div>
 			</li>
 		);
@@ -51,7 +51,7 @@ var ProductList = React.createClass({
 
 	displayList: function(products) {
 		var items = _.sortBy(products, function(item) {
-			var distance = this.calculateDistance(item.geodata);
+			var distance = this.calculateDistance(item.coordinates);
 			return distance;
 		}.bind(this));
 

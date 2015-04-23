@@ -1,7 +1,7 @@
 var ProductSearch = React.createClass({
 	getInitialState: function() {
 		return {
-			geolocation: new Geodata({
+			geodata: new Geodata({
 				latitude: 52.3532884,
 				longitude: 4.8407814
 			})
@@ -11,7 +11,7 @@ var ProductSearch = React.createClass({
 	componentWillMount: function() {
 		Geodata.retrieve(function(geodata) {
 			this.setState({
-				geolocation: geodata
+				geodata: geodata
 			});
 		}.bind(this));
 	},
@@ -32,7 +32,7 @@ var ProductSearch = React.createClass({
 				</section>
 
 				<section className="product_list">
-					<ProductList byDistance={this.state.geolocation} />
+					<ProductList byDistance={this.state.geodata} />
 				</section>
 			</div>
 		);
