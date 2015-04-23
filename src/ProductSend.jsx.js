@@ -37,6 +37,7 @@ var ProductSend = React.createClass({
 		var reader = new FileReader();
 		var name = this.state.name;
 		var price = this.state.price;
+		var coordinates = this.state.geolocation.coordinates;
 
 		// Closure to capture the file information.
 		reader.onload = (function(theFile) {
@@ -44,12 +45,13 @@ var ProductSend = React.createClass({
 
 			var firebaseRef = new Firebase('https://hackbattle2015.firebaseio.com/products/');
 			firebaseRef.push({
-				"name":name,
-				"price": price,
-				"image": e.target.result
+				"coordinates": 	coordinates,
+				"name": 		name,
+				"price": 		price,
+				"image": 		e.target.result
 			});
 
-			alert("Product Submited!")
+			alert("Product Submited!");
 
 		};
 		})(files[0]);
