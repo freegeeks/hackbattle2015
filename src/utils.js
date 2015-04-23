@@ -3,6 +3,7 @@
 	///////////////////////////////////////////////////////////
 
 	function initialize() {
+
 		var mapOptions = {
 			zoom: 10,
 			center: new google.maps.LatLng(48.8421607,2, -2.3994408,13)
@@ -32,12 +33,24 @@
 	}
 
 
-setTimeout(function(){ 
 	google.maps.event.addDomListener(window, 'load', initialize);
- }, 500);
-
 
 	
+
+// Set geolocation
+function getLocation() {
+	if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		///alert("Geolocation is not supported by this browser");
+	}
+};
+
+
+function showPosition(pos) {
+	console.log(pos.coords.latitude);
+	console.log(pos.coords.longitude);
+};
 
 
 /*
