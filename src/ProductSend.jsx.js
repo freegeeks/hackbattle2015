@@ -12,7 +12,7 @@ var ProductSend = React.createClass({
 				longitude: 4.8407814
 			}),
 
-			'modalClass':"show"
+			'modalClass':"hide"
 		};
 	},
 
