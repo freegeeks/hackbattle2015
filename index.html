@@ -19,50 +19,49 @@
 
 	<section id="container">
 		<p>
-			To install React, follow the instructions on
-			<a href="http://www.github.com/facebook/react/">GitHub</a>.
-		</p>
-		<p>
-			If you can see this, React is not working right.
-			If you checked out the source from GitHub make sure to run <code>grunt</code>.
+			Loading...
 		</p>
 	</section>
 
+	<section id="modal"></section>
 
+	<section id="test"></section>
 
-	<section id="modal">
-	</section>
-    
-    
-    <script src="shared/thirdparty/es5-shim.min.js"></script>
-    <script src="shared/thirdparty/es5-sham.min.js"></script>
-    <script src="shared/thirdparty/console-polyfill.js"></script>
-    <script src="bower_components/react/react-with-addons.js"></script>
-    <script src="bower_components/react/JSXTransformer.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/reactfire/dist/reactfire.min.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
+	<script src="shared/thirdparty/es5-shim.min.js"></script>
+	<script src="shared/thirdparty/es5-sham.min.js"></script>
+	<script src="shared/thirdparty/console-polyfill.js"></script>
+	<script src="bower_components/react/react-with-addons.js"></script>
+	<script src="bower_components/react/JSXTransformer.js"></script>
+	<script src="bower_components/firebase/firebase.js"></script>
+	<script src="bower_components/reactfire/dist/reactfire.min.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
 
-    <script src="src/geodata.js"></script>
-    <script type="text/jsx" src="src/geodistance.jsx.js"></script>
-    <script type="text/jsx" src="src/productSearch.jsx.js"></script>
-    <script type="text/jsx" src="src/productList.jsx.js"></script>
-    
-    <script type="text/jsx" src="src/flux.js"></script>
+	<script src="src/geodata.js"></script>
+	<script type="text/jsx" src="src/geodistance.jsx.js"></script>
+	<script type="text/jsx" src="src/productSearch.jsx.js"></script>
+	<script type="text/jsx" src="src/productList.jsx.js"></script>
+	<script type="text/jsx" src="src/flux.js"></script>
+	<script type="text/jsx" src="src/productSend.jsx.js"></script>
+	<script type="text/jsx" src="src/test.jsx.js"></script>
 
-    <script type="text/jsx" src="src/productSend.jsx.js"></script>
-
-    <script type="text/jsx">
-      React.render(
-        <ProductSearch />,
-        document.getElementById('container')
-      );
+	<script type="text/jsx">
 		React.render(
-        <ProductSend />,
-        document.getElementById('modal')
-      );      
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="src/utils.js"></script>
-  </body>
+			<ProductSearch />,
+			document.getElementById('container')
+			);
+		React.render(
+			<ProductSend />,
+			document.getElementById('modal')
+			);
+
+		React.render(
+			<WithoutMixin />,
+			document.getElementById('test')
+			);
+        
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="src/utils.js"></script>
+</body>
 </html>
